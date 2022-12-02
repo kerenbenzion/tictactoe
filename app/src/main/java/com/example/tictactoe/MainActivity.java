@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
             {0,3,6}, {1,4,7}, {2,5,8},
             {0,4,8}, {2,4,6}
     };
-    String winner = "X";
+    String winner = "O";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void play(View view) {
+        String winner = "O";
         ImageView ivClicked = (ImageView) view;
         ivClicked.setAlpha(1.0f);
         ivClicked.setVisibility(View.VISIBLE);
@@ -104,6 +105,10 @@ public class MainActivity extends AppCompatActivity {
         gameActive = true;
         currentPlayer = 0;
         LinearLayout layout = findViewById(R.id.restartLayout);
+        View player = (View) findViewById(R.id.current_player);
+        ImageView current_player = (ImageView) player;
+        current_player.setVisibility(View.VISIBLE);
+        current_player.setImageResource(R.drawable.xplay);
         layout.setVisibility(View.INVISIBLE);
         for (int i=0; i< gameState.length; i++){
             int id = getResources().getIdentifier("cell"+i, "id", getPackageName());
