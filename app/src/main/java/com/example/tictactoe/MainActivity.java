@@ -2,6 +2,8 @@ package com.example.tictactoe;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -51,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
                     if(gameState[winningPosition[0]] == 0){
                         winner = "x";
                     }
+                    ImageView v = findViewById(R.id.cell0);
+                    v.setBackgroundColor(Color.rgb(255,255,0));
                     TextView tvMessage = findViewById(R.id.tvMessage);
                     tvMessage.setText(winner + " has won!");
                     LinearLayout layout = findViewById(R.id.restartLayout);
