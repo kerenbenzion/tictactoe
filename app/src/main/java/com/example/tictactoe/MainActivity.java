@@ -2,6 +2,8 @@ package com.example.tictactoe;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -31,14 +33,21 @@ public class MainActivity extends AppCompatActivity {
         ImageView ivClicked = (ImageView) view;
         ivClicked.setAlpha(1.0f);
         ivClicked.setVisibility(View.VISIBLE);
+        View player = (View) findViewById(R.id.current_player);
+        ImageView current_player = (ImageView) player;
+        current_player.setVisibility(View.VISIBLE);
         int clickedImageView = Integer.parseInt(ivClicked.getTag().toString());
         if(gameState[clickedImageView] == -1 && gameActive){
             gameState[clickedImageView] = currentPlayer;
             if(currentPlayer == 0){
                 ivClicked.setImageResource(R.drawable.x);
+                current_player.setImageResource(R.drawable.oplay);
+
                 currentPlayer = 1;
             } else {
                 ivClicked.setImageResource(R.drawable.o);
+                current_player.setImageResource(R.drawable.xplay);
+
                 currentPlayer = 0;
             }
             ivClicked.setVisibility(View.VISIBLE);
@@ -51,6 +60,22 @@ public class MainActivity extends AppCompatActivity {
                     if(gameState[winningPosition[0]] == 0){
                         winner = "x";
                     }
+                    String f_cell = "cell"+winningPosition[0];
+                    String s_cell = "cell"+winningPosition[1];
+                    String t_cell = "cell"+winningPosition[2];
+                    int f_id = getResources().getIdentifier(f_cell, "id", getPackageName());
+                    int s_id = getResources().getIdentifier(s_cell, "id", getPackageName());
+                    int t_id = getResources().getIdentifier(t_cell, "id", getPackageName());
+
+
+                    ImageView f_v = findViewById(f_id);
+                    ImageView s_v = findViewById(s_id);
+                    ImageView t_v = findViewById(t_id);
+
+                    f_v.setBackgroundColor(Color.rgb(255,255,0));
+                    s_v.setBackgroundColor(Color.rgb(255,255,0));
+                    t_v.setBackgroundColor(Color.rgb(255,255,0));
+
                     TextView tvMessage = findViewById(R.id.tvMessage);
                     tvMessage.setText(winner + " has won!");
                     LinearLayout layout = findViewById(R.id.restartLayout);
@@ -81,6 +106,9 @@ public class MainActivity extends AppCompatActivity {
         LinearLayout layout = findViewById(R.id.restartLayout);
         layout.setVisibility(View.INVISIBLE);
         for (int i=0; i< gameState.length; i++){
+            int id = getResources().getIdentifier("cell"+i, "id", getPackageName());
+            ImageView f_v = findViewById(id);
+            f_v.setBackgroundColor(Color.rgb(255,255,255));
             gameState[i] = -1;
         }
         LinearLayout gameLayout = findViewById(R.id.gameLayout);
