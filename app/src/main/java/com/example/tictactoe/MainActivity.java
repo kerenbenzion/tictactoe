@@ -61,6 +61,55 @@ public class MainActivity extends AppCompatActivity {
                     if(gameState[winningPosition[0]] == 0){
                         winner = "x";
                     }
+                    if(winningPosition[0]==0 && winningPosition[1]==4 && winningPosition[2]==8){
+                        String cross2 = "cross2";
+                        int cross2_id = getResources().getIdentifier(cross2, "id", getPackageName());
+                        ImageView cross2_v = findViewById(cross2_id);
+                        cross2_v.setVisibility(View.VISIBLE);
+                        cross2_v.bringToFront();
+                    } else if (winningPosition[0]==2 && winningPosition[1]==4 && winningPosition[2]==6) {
+                        String cross1 = "cross1";
+                        int cross1_id = getResources().getIdentifier(cross1, "id", getPackageName());
+                        ImageView cross1_v = findViewById(cross1_id);
+                        cross1_v.setVisibility(View.VISIBLE);
+                        cross1_v.bringToFront();
+                    } else if (winningPosition[0]==0 && winningPosition[1]==3 && winningPosition[2]==6){
+                        String veritcal1 = "vertical1";
+                        int veritcal1_id = getResources().getIdentifier(veritcal1, "id", getPackageName());
+                        ImageView veritcal1_v = findViewById(veritcal1_id);
+                        veritcal1_v.setVisibility(View.VISIBLE);
+                        veritcal1_v.bringToFront();
+                    } else if (winningPosition[0]==1 && winningPosition[1]==4 && winningPosition[2]==7){
+                        String vertical2 = "vertical2";
+                        int veritcal2_id = getResources().getIdentifier(vertical2, "id", getPackageName());
+                        ImageView veritcal2_v = findViewById(veritcal2_id);
+                        veritcal2_v.setVisibility(View.VISIBLE);
+                        veritcal2_v.bringToFront();
+                    } else if (winningPosition[0]==2 && winningPosition[1]==5 && winningPosition[2]==8){
+                        String vertical3 = "vertical3";
+                        int veritcal3_id = getResources().getIdentifier(vertical3, "id", getPackageName());
+                        ImageView veritcal3_v = findViewById(veritcal3_id);
+                        veritcal3_v.setVisibility(View.VISIBLE);
+                        veritcal3_v.bringToFront();
+                    } else if (winningPosition[0]==6 && winningPosition[1]==7 && winningPosition[2]==8){
+                        String horizontal3 = "horizontal3";
+                        int horizontal3_id = getResources().getIdentifier(horizontal3, "id", getPackageName());
+                        ImageView horizontal3_v = findViewById(horizontal3_id);
+                        horizontal3_v.setVisibility(View.VISIBLE);
+                        horizontal3_v.bringToFront();
+                    } else if (winningPosition[0]==3 && winningPosition[1]==4 && winningPosition[2]==5) {
+                        String horizontal2 = "horizontal2";
+                        int horizontal2_id = getResources().getIdentifier(horizontal2, "id", getPackageName());
+                        ImageView horizontal2_v = findViewById(horizontal2_id);
+                        horizontal2_v.setVisibility(View.VISIBLE);
+                        horizontal2_v.bringToFront();
+                    }else if (winningPosition[0]==0&& winningPosition[1]==1 && winningPosition[2]==2){
+                        String horizontal1 = "horizontal1";
+                        int horizontal1_id = getResources().getIdentifier(horizontal1, "id", getPackageName());
+                        ImageView horizontal1_v = findViewById(horizontal1_id);
+                        horizontal1_v.setVisibility(View.VISIBLE);
+                        horizontal1_v.bringToFront();
+                    }
                     String f_cell = "cell"+winningPosition[0];
                     String s_cell = "cell"+winningPosition[1];
                     String t_cell = "cell"+winningPosition[2];
@@ -80,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
                     TextView tvMessage = findViewById(R.id.tvMessage);
                     tvMessage.setText(winner + " has won!");
                     LinearLayout layout = findViewById(R.id.restartLayout);
+                    layout.bringToFront();
                     layout.setVisibility(View.VISIBLE);
                 }else{
                     boolean gameOver = true;
@@ -115,6 +165,19 @@ public class MainActivity extends AppCompatActivity {
             ImageView f_v = findViewById(id);
             f_v.setBackgroundColor(Color.rgb(255,255,255));
             gameState[i] = -1;
+        }
+        for (int i=1;i<4;i++){
+            int id = getResources().getIdentifier("horizontal"+i, "id", getPackageName());
+            ImageView f_v = findViewById(id);
+            f_v.setVisibility(View.INVISIBLE);
+            id = getResources().getIdentifier("vertical"+i, "id", getPackageName());
+            f_v = findViewById(id);
+            f_v.setVisibility(View.INVISIBLE);
+            if (i==1 || i ==2){
+                id = getResources().getIdentifier("cross"+i, "id", getPackageName());
+                f_v = findViewById(id);
+                f_v.setVisibility(View.INVISIBLE);
+            }
         }
         LinearLayout gameLayout = findViewById(R.id.gameLayout);
         for (int i=0; i < gameLayout.getChildCount(); i++){

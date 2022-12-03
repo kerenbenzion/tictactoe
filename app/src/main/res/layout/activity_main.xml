@@ -7,6 +7,124 @@
     android:padding="16dp"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/cross1"
+        android:layout_width="366dp"
+        android:layout_height="347dp"
+        android:layout_alignTop="@+id/gameLayout"
+        android:layout_alignEnd="@+id/plays"
+        android:layout_alignBottom="@+id/gameLayout"
+        android:layout_marginStart="-371dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="2dp"
+        android:layout_toEndOf="@+id/plays"
+        android:rotation="50"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/line_vertical"
+        tools:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/cross2"
+        android:layout_width="366dp"
+        android:layout_height="347dp"
+        android:layout_alignTop="@+id/gameLayout"
+        android:layout_alignEnd="@+id/plays"
+        android:layout_alignBottom="@+id/gameLayout"
+        android:layout_marginStart="-371dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="2dp"
+        android:layout_toEndOf="@+id/plays"
+        android:rotation="-50"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/line_vertical"
+        tools:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/vertical1"
+        android:layout_width="121dp"
+        android:layout_height="318dp"
+        android:layout_alignTop="@+id/gameLayout"
+        android:layout_alignBottom="@+id/gameLayout"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="24dp"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/line_vertical"
+        tools:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/horizontal3"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_alignTop="@+id/gameLayout"
+        android:layout_alignBottom="@+id/gameLayout"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="24dp"
+        android:rotation="91"
+        android:translationY="130dp"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/line_vertical"
+        tools:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/horizontal2"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_alignTop="@+id/gameLayout"
+        android:layout_alignBottom="@+id/gameLayout"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="24dp"
+        android:rotation="91"
+        android:translationY="10dp"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/line_vertical"
+        tools:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/horizontal1"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_alignTop="@+id/gameLayout"
+        android:layout_alignBottom="@+id/gameLayout"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="24dp"
+        android:rotation="91"
+        android:translationY="-110dp"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/line_vertical"
+        tools:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/vertical2"
+        android:layout_width="121dp"
+        android:layout_height="318dp"
+        android:layout_alignTop="@+id/gameLayout"
+        android:layout_alignEnd="@+id/cross1"
+        android:layout_alignBottom="@+id/cross1"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="253dp"
+        android:layout_marginBottom="22dp"
+        android:translationX="130dp"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/line_vertical"
+        tools:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/vertical3"
+        android:layout_width="121dp"
+        android:layout_height="318dp"
+        android:layout_alignTop="@+id/gameLayout"
+        android:layout_alignEnd="@+id/cross1"
+        android:layout_alignBottom="@+id/cross1"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="253dp"
+        android:layout_marginBottom="22dp"
+        android:translationX="260dp"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/line_vertical"
+        tools:visibility="invisible" />
+
     <LinearLayout
         android:id="@+id/plays"
         android:layout_width="match_parent"
@@ -99,6 +217,7 @@
                 android:layout_width="6dp"
                 android:layout_height="match_parent"
                 android:background="@color/black" />
+
             <ImageView
                 android:id="@+id/cell4"
                 android:layout_width="0dp"
@@ -123,6 +242,7 @@
                 android:onClick="play"
                 android:tag="5"
                 android:alpha="0.0" />
+
         </LinearLayout>
         <View
             android:layout_width="match_parent"
